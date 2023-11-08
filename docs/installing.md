@@ -70,23 +70,29 @@ pip3 install huggingface_hub runpod>=0.10.0
 cd /workspace/stable-diffusion-webui/models/Stable-diffusion
 wget https://civitai.com/api/download/models/197181 --content-disposition
 ```
-4. Download ControlNet model for poses `OpenPose`:
+4. Download LoRa models:
+```bash
+cd /workspace/stable-diffusion-webui/models/Lora
+wget https://civitai.com/api/download/models/7870 --content-disposition
+wget https://civitai.com/api/download/models/30798 --content-disposition
+```
+5. Download ControlNet model for poses `OpenPose`:
 ```bash
 mkdir -p /workspace/stable-diffusion-webui/models/ControlNet
 cd /workspace/stable-diffusion-webui/models/ControlNet
 wget https://civitai.com/api/download/models/44811 --content-disposition
 ```
-5. Download Upscalers:
+6. Download Upscalers:
 ```bash
 mkdir -p /workspace/stable-diffusion-webui/models/ESRGAN
 cd /workspace/stable-diffusion-webui/models/ESRGAN
 wget https://huggingface.co/antonioglass/upscalers/resolve/main/4x_NMKD-Siax_200k.pth
 ```
-6. Create logs directory:
+7. Create logs directory:
 ```bash
 mkdir -p /workspace/logs
 ```
-7. Install config files:
+8. Install config files:
 ```bash
 cd /workspace/stable-diffusion-webui
 rm webui-user.sh config.json ui-config.json
@@ -94,16 +100,16 @@ wget https://raw.githubusercontent.com/ai-sansylgroup/runpod-worker-a1111/main/w
 wget https://raw.githubusercontent.com/ai-sansylgroup/runpod-worker-a1111/main/config.json
 wget https://raw.githubusercontent.com/ai-sansylgroup/runpod-worker-a1111/main/ui-config.json
 ```
-8. Run the Web UI:
+9. Run the Web UI:
 ```bash
 deactivate
 export HF_HOME="/workspace"
 cd /workspace/stable-diffusion-webui
 ./webui.sh -f
 ```
-9. Wait for the Web UI to start up, and download the models. You shoud
+10. Wait for the Web UI to start up, and download the models. You shoud
     see something like this when it is ready:
 ```
 Model loaded in 16.9s (calculate hash: 8.0s, load weights from disk: 0.4s, create model: 2.1s, apply weights to model: 2.6s, apply half(): 2.6s, move model to device: 0.7s, calculate empty prompt: 0.3s).
 ```
-10. Press Ctrl-C to exit, and then you can terminate the pod.
+11. Press Ctrl-C to exit, and then you can terminate the pod.
