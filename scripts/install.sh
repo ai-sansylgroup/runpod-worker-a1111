@@ -43,6 +43,11 @@ echo "Downloading Stable Diffusion models"
 cd /workspace/stable-diffusion-webui/models/Stable-diffusion
 wget https://civitai.com/api/download/models/197181 --content-disposition
 
+echo "Downloading LoRa models"
+cd /workspace/stable-diffusion-webui/models/Lora
+wget https://civitai.com/api/download/models/7870 --content-disposition
+wget https://civitai.com/api/download/models/30798 --content-disposition
+
 echo "Downloading ControlNet models"
 mkdir -p /workspace/stable-diffusion-webui/models/ControlNet
 cd /workspace/stable-diffusion-webui/models/ControlNet
