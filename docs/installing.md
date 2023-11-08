@@ -76,11 +76,17 @@ mkdir -p /workspace/stable-diffusion-webui/models/ControlNet
 cd /workspace/stable-diffusion-webui/models/ControlNet
 wget https://civitai.com/api/download/models/44811 --content-disposition
 ```
-5. Create logs directory:
+5. Download Upscalers:
+```bash
+mkdir -p /workspace/stable-diffusion-webui/models/ESRGAN
+cd /workspace/stable-diffusion-webui/models/ESRGAN
+wget https://huggingface.co/antonioglass/upscalers/resolve/main/4x_NMKD-Siax_200k.pth
+```
+6. Create logs directory:
 ```bash
 mkdir -p /workspace/logs
 ```
-6. Install config files:
+7. Install config files:
 ```bash
 cd /workspace/stable-diffusion-webui
 rm webui-user.sh config.json ui-config.json
@@ -88,16 +94,16 @@ wget https://raw.githubusercontent.com/ai-sansylgroup/runpod-worker-a1111/main/w
 wget https://raw.githubusercontent.com/ai-sansylgroup/runpod-worker-a1111/main/config.json
 wget https://raw.githubusercontent.com/ai-sansylgroup/runpod-worker-a1111/main/ui-config.json
 ```
-7. Run the Web UI:
+8. Run the Web UI:
 ```bash
 deactivate
 export HF_HOME="/workspace"
 cd /workspace/stable-diffusion-webui
 ./webui.sh -f
 ```
-8. Wait for the Web UI to start up, and download the models. You shoud
+9. Wait for the Web UI to start up, and download the models. You shoud
     see something like this when it is ready:
 ```
 Model loaded in 16.9s (calculate hash: 8.0s, load weights from disk: 0.4s, create model: 2.1s, apply weights to model: 2.6s, apply half(): 2.6s, move model to device: 0.7s, calculate empty prompt: 0.3s).
 ```
-9. Press Ctrl-C to exit, and then you can terminate the pod.
+10. Press Ctrl-C to exit, and then you can terminate the pod.
