@@ -2,7 +2,7 @@
 
 This is the source code for a [RunPod](https://runpod.io?ref=2xxro4sy)
 Serverless worker that uses the [Automatic1111 Stable Diffusion API](
-https://github.com/AUTOMATIC1111/stable-diffusion-webui) for inference.
+https://github.com/AUTOMATIC1111/stable-diffusion-webui) for inference. This is a fork from https://github.com/ashleykleynhans/runpod-worker-a1111 with minor adjustments.
 
 ## Model
 
